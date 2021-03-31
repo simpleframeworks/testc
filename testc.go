@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 // New .
@@ -13,6 +14,7 @@ func New(t *testing.T) *TestC {
 	return &TestC{
 		t:          t,
 		Assertions: assert.New(t),
+		Require:    require.New(t),
 	}
 }
 
@@ -20,6 +22,7 @@ func New(t *testing.T) *TestC {
 type TestC struct {
 	t *testing.T
 	*assert.Assertions
+	Require *require.Assertions
 }
 
 func (t *TestC) logItf(name string, format string, args ...interface{}) {
