@@ -12,16 +12,16 @@ import (
 // New .
 func New(t *testing.T) *TestC {
 	return &TestC{
-		t:          t,
-		Assertions: assert.New(t),
-		Require:    require.New(t),
+		t:       t,
+		Assert:  assert.New(t),
+		Require: require.New(t),
 	}
 }
 
 // TestC extends the standard testing functions with assertions and BDD logging
 type TestC struct {
-	t *testing.T
-	*assert.Assertions
+	t       *testing.T
+	Assert  *assert.Assertions
 	Require *require.Assertions
 }
 
