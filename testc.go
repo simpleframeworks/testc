@@ -86,6 +86,6 @@ func (t *TestC) WaitTimeout(wait *sync.WaitGroup, timeout time.Duration) {
 	case <-finished:
 		break
 	case <-time.After(timeout):
-		t.FailNow("timeout triggered")
+		t.Assert.FailNow("timeout triggered")
 	}
 }
